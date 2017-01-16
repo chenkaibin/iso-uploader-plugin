@@ -124,17 +124,26 @@ public class CommandExecuter {
             }
     }
     
-    public void executeRemoveDir(String rmCommand) {
+    public String executeRemoveDir(String rmCommand) {
             System.out.println("Executing command: " + rmCommand);
 
-            String[] rmCommands = new String[]{rmCommand};
+            String[] rmCommands = new String[]{"/bin/sh","-c",rmCommand};
             try {
                 ProcessBuilder builderRm = new ProcessBuilder(rmCommands);
                 builderRm.redirectErrorStream(true);
                 Process pRm =builderRm.start();
+                BufferedReader reader1 = new BufferedReader(new InputStreamReader(pRm.getInputStream()));
+                String line1 = "";
+                line1 = reader1.readLine();
+                System.out.println(line1);
+                if(line1.indexOf("ERROR")!=-1){
+                    return line1;
+                }else{
+                    return "success";
+                }
             }catch (Exception e) {
                 e.printStackTrace();
+                return e.getMessage();
             }
     }
-
 }

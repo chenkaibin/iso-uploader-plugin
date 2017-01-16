@@ -36,4 +36,14 @@
     <servlet-name>RemoveTempFile</servlet-name>
     <url-pattern>/RemoveTempFile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveFile</display-name>
+    <servlet-name>RemoveFile</servlet-name>
+    <servlet-class>org.ovirtChina.enginePlugin.isoUploaderPlugin.RemoveFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveFile</servlet-name>
+    <url-pattern>/RemoveFile</url-pattern>
+  </servlet-mapping>
 </web-app>

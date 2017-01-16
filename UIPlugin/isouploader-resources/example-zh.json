@@ -11,6 +11,8 @@
   "ResumeAll": "恢复所有上传",
   "Domain": "下拉选择存储域",
   "NFTD": "没有文件上传",
+  "NFTU": "没有镜像",
+  "WFL":"镜像加载中...",
   "ClearCache": "清除缓存",
   "Thanks": "感谢使用本插件，本插件所有代码都在https://github.com/eayun/iso-uploader-plugin。如有任何疑问或者建议，欢迎在https://github.com/eayun/iso-uploader-plugin/issues提出。"
 }
