@@ -18,22 +18,29 @@
       });
       
       $scope.rmIso = function(index){
-    	    var file = $scope.files[index];
-			$.ajax({
-		             type: "POST",
-		             url: "/iso-uploader-plugin/RemoveFile",
-		             data: {isoName:file.name,domainName:sessionStorage.getItem("domain_name")},
-		             dataType: "text",
-		             success: function(rep){
-		            	 if(rep=="1"){
+           var file = $scope.files[index];
+           var lang = top.location.href.split("=")[1].split("#")[0];
+           var confirmMsg = "Are you sure you want to delete ["+file.name+"]?";
+           if(lang=='zh_CN'){
+              confirmMsg = "确定要删除["+file.name+"]吗?"; 
+           }
+           if(confirm(confirmMsg)){
+	  	$.ajax({
+		       type: "POST",
+		       url: "/iso-uploader-plugin/RemoveFile",
+		       data: {isoName:file.name,domainName:sessionStorage.getItem("domain_name")},
+		       dataType: "text",
+		       success: function(rep){
+		                if(rep=="1"){
                                       $scope.$apply(function(){
                                            $scope.files.splice(index,1);
 				      });
 		 	         }else{
                                       alert(rep);
                                  }
-		             }
-		     });
+		       }
+	        });
+             }
       }
       $scope.getStatus = function(){
     	  if($scope.files==null){
