@@ -1,5 +1,5 @@
 %define _version 0.5
-%define _release 2
+%define _release 3
 
 Name:		iso-uploader-plugin
 Version:	%{_version}
