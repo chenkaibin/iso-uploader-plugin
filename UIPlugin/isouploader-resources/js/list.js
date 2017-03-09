@@ -50,5 +50,8 @@
     	  	return "nofiles"
     	  }
       }
+      $scope.hide = function(file){
+          return file.name.charAt(0) != '.';
+      }
   }]);
 })();
