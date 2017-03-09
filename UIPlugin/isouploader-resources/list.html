@@ -20,7 +20,7 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="file in files">
+        <tr ng-repeat="file in files | filter:hide">
           <td class="text-cell">{{file.name}}</td>
           <!--td class="text-cell">{{file.size}}</td>
           <td class="text-cell">{{file.type}}</td-->
